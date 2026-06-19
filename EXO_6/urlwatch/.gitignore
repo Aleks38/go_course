@@ -1,0 +1,24 @@
+# Binaires compilés
+/urlwatch
+urlwatch
+*.exe
+*.test
+*.out
+
+# Couverture de tests
+coverage.*
+*.cover
+
+# Bases de données locales (bonus SQLite)
+*.db
+*.sqlite
+*.sqlite3
+
+# Variables d'environnement / secrets
+.env
+.env.*
+
+# Fichiers système / éditeur
+.DS_Store
+.idea/
+.vscode/
