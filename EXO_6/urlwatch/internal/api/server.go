@@ -22,5 +22,8 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("/v1/checks", s.handleChecks)
 	mux.HandleFunc("/v1/checks/", s.handleCheckByID)
 	mux.HandleFunc("/healthz", s.handleHealthz)
+	if s.logger == nil {
+		return mux
+	}
 	return loggingMiddleware(s.logger, mux)
 }
