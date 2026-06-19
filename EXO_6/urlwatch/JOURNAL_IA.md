@@ -10,3 +10,10 @@
 - **Décidé / vérifié moi-même :** *(à compléter — ex. choix du nom de module, du
   découpage, relecture de chaque fichier généré).*
 - **Rejeté / modifié :** *(à compléter)*.
+
+## Partie 1 — Modélisation du domaine
+
+- **Repris l'IA :** elle avait regroupé plusieurs structures dans un seul
+  fichier. Je l'ai corrigée : je veux **une structure par fichier**
+  (`check_result.go`, `summary.go`, `batch.go`) pour une relecture de code
+  plus simple et un découpage plus lisible.
