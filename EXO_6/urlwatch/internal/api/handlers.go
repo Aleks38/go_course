@@ -53,6 +53,7 @@ func (s *Server) handleChecks(w http.ResponseWriter, r *http.Request) {
 		Summary:   domain.Summarize(results, time.Since(start)),
 		Results:   results,
 	}
+	setBatchID(r.Context(), batch.ID)
 
 	if err := s.store.Save(r.Context(), batch); err != nil {
 		writeError(w, http.StatusInternalServerError, "internal", "echec de la persistance du lot")
@@ -69,6 +70,8 @@ func (s *Server) handleCheckByID(w http.ResponseWriter, r *http.Request) {
 	}
 
 	id := strings.TrimPrefix(r.URL.Path, "/v1/checks/")
+	setBatchID(r.Context(), id)
+
 	batch, err := s.store.Get(r.Context(), id)
 	if err != nil {
 		if errors.Is(err, domain.ErrBatchNotFound) {
