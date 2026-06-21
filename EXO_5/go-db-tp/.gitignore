@@ -1,0 +1,15 @@
+# Binaire compilé
+/go-db-tp
+go-db-tp
+*.exe
+*.test
+
+# Bases de données SQLite générées à l'exécution
+*.db
+*.sqlite
+*.sqlite3
+
+# Fichiers système / éditeur
+.DS_Store
+.idea/
+.vscode/
